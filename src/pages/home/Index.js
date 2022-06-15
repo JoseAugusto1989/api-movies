@@ -3,25 +3,25 @@ import thor from "../../assets/thor.jpg";
 import drStrange from "../../assets/dr-estranho.jpg";
 
 import { Container, MovieList, Movie } from "./styles";
+import { APIKey } from "../../config/key";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const movies = [
-    {
-      id: 1,
-      title: "Spider Man",
-      image_url: "spiderMan",
-    },
-    {
-      id: 2,
-      title: "Thor",
-      image_url: "thor",
-    },
-    {
-      id: 3,
-      title: "Dr. Strange",
-      image_url: "drStrange",
-    },
-  ];
+  const [movies, setMovies] = useState([]);
+  const image_path = "https://image.tmdb.org/t/p/w500";
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data.results);
+        setMovies(data.results);
+      });
+  }, []);
+
   return (
     <Container>
       <h1>Movies</h1>
@@ -29,9 +29,13 @@ const Home = () => {
         {movies.map((movie) => {
           return (
             <Movie key={movie.id}>
-              <a href="http://google.com.br">
-                <img src={movie.image_url} alt={movie.title} />
-              </a>
+              <Link to={`/details/${movie.id}`}>
+                <img
+                  src={`${image_path}${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </Link>
+
               <span>{movie.title}</span>
             </Movie>
           );
