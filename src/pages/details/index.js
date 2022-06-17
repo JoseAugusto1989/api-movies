@@ -6,7 +6,7 @@ import { Container } from "./styles";
 const Details = () => {
   const { id } = useParams();
 
-  const { movie, setMovie } = useState({});
+  const [movie, setMovie] = useState({});
   const image_path = "http://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
@@ -15,15 +15,15 @@ const Details = () => {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        const { title, poster_path, overwiew, release_date } = data;
+        const { title, poster_path, overwiew, release_date, vote_average } = data;
         const movie = {
           id,
           title,
           sinopse: overwiew,
           image: `${image_path}${poster_path}`,
-          releaseData: release_date,
+          releaseDate: release_date,
+          note: vote_average,
         };
-
         setMovie(movie);
       });
   }, [id]);
@@ -33,10 +33,11 @@ const Details = () => {
       <div className="movie">
         <img src={movie.image} alt={movie.sinopse} />
         <div className="details">
+        <h2>Nota: {movie.note}</h2>
           <h1>{movie.title}</h1>
           <span>Sinopse: {movie.sinopse}</span>
           <span className="release-date">
-            Release date: {movie.releaseData}
+            Release date: {movie.releaseDate}
           </span>
           <Link to="/">
             <button>Go Back</button>
