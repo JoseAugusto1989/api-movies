@@ -15,11 +15,11 @@ const Details = () => {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        const { title, poster_path, overwiew, release_date, vote_average } = data;
+        const { title, poster_path, overview, release_date, vote_average } = data;
         const movie = {
           id,
           title,
-          sinopse: overwiew,
+          sinopse: overview,
           image: `${image_path}${poster_path}`,
           releaseDate: release_date,
           note: vote_average,

@@ -1,11 +1,8 @@
-import spiderMan from "../../assets/spider-man.jpg";
-import thor from "../../assets/thor.jpg";
-import drStrange from "../../assets/dr-estranho.jpg";
-
 import { Container, MovieList, Movie } from "./styles";
 import { APIKey } from "../../config/key";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import  Footer  from "../footer/footer";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -17,11 +14,12 @@ const Home = () => {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data.results);
+        console.log("data.results", data.results);
         setMovies(data.results);
       });
   }, []);
-
+  
+  console.log(movies)
   return (
     <Container>
       <h1>Movies</h1>
@@ -35,12 +33,12 @@ const Home = () => {
                   alt={movie.title}
                 />
               </Link>
-
               <span>{movie.title}</span>
             </Movie>
           );
         })}
       </MovieList>
+      <Footer />
     </Container>
   );
 };
