@@ -7,6 +7,20 @@ export const Container = styled.div`
   }
 `;
 
+export const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Button = styled.button`
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 180%;
+`;
+
 export const MovieList = styled.ul`
   list-style: none;
   display: grid;

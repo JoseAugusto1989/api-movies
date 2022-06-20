@@ -14,6 +14,12 @@ export const StyledFooter = styled.div`
     list-style-type: none;
   }
 
+  .social_list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+
   .social_list li {
     margin: 0 1em;
   }
@@ -29,6 +35,9 @@ export const StyledFooter = styled.div`
 
   .copy_right {
     margin-top: 2em;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
   }
 
   .copy_right span {

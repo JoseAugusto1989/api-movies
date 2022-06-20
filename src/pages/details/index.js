@@ -33,7 +33,7 @@ const Details = () => {
       <div className="movie">
         <img src={movie.image} alt={movie.sinopse} />
         <div className="details">
-        <h2>Nota: {movie.note}</h2>
+        <h2>Note: {movie.note}</h2>
           <h1>{movie.title}</h1>
           <span>Sinopse: {movie.sinopse}</span>
           <span className="release-date">
