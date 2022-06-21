@@ -5,7 +5,9 @@ import { Container, MovieList, Movie, Pagination, Button } from "./styles";
 import { APIKey } from "../../config/key";
 import Footer from "../footer/footer";
 
-const pagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+const pagination = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -34,13 +36,7 @@ const Home = () => {
   return (
     <Container>
       <h1>Movies</h1>
-      <Pagination>
-        {pagination.map((num, i) => (
-          <Button key={num + i} onClick={() => setPage(num)}>
-            {num}
-          </Button>
-        ))}
-      </Pagination>
+
       <MovieList>
         {movies.map((movie) => (
           <Movie key={movie.id}>
@@ -54,6 +50,13 @@ const Home = () => {
           </Movie>
         ))}
       </MovieList>
+      <Pagination>
+        {pagination.map((num, i) => (
+          <Button key={num + i} onClick={() => setPage(num)}>
+            {num}
+          </Button>
+        ))}
+      </Pagination>
       <Footer />
     </Container>
   );

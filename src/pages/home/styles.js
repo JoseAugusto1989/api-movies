@@ -10,6 +10,11 @@ export const Container = styled.div`
 export const Pagination = styled.div`
   display: flex;
   justify-content: center;
+  padding: 30px;
+
+  button:hover {
+    color: #ffbb33;
+  }
 `;
 
 export const Button = styled.button`
@@ -24,7 +29,7 @@ export const Button = styled.button`
 export const MovieList = styled.ul`
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   column-gap: 3rem;
   row-gap: 4rem;
 `;
