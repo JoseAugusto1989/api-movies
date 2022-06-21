@@ -1,22 +1,22 @@
-import { StyledFooter, StyledSocialList, StyledCopyRight } from "./styles";
+import { StyledFooter, StyledSocialList, StyledCopyRight, StyledLi, StyledSpan } from "./styles";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <StyledFooter>
       <StyledSocialList>
-        <li>
+        <StyledLi>
           <FaFacebook />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <FaInstagram />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <FaLinkedin />
-        </li>
+        </StyledLi>
       </StyledSocialList>
       <StyledCopyRight>
-        <span>Movies</span> &copy; 2022
+        <StyledSpan>Movies</StyledSpan> &copy; 2022
       </StyledCopyRight>
     </StyledFooter>
   );

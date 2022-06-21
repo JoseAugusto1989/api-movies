@@ -12,7 +12,7 @@ export const Pagination = styled.div`
   justify-content: center;
   padding: 30px;
 
-  button:hover {
+  &:hover {
     color: #ffbb33;
   }
 `;

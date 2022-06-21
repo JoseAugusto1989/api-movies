@@ -36,7 +36,6 @@ const Home = () => {
   return (
     <Container>
       <h1>Movies</h1>
-
       <MovieList>
         {movies.map((movie) => (
           <Movie key={movie.id}>

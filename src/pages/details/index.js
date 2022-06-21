@@ -1,7 +1,16 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import { APIKey } from "../../config/key";
-import { Container } from "./styles";
+import {
+  Container,
+  Button,
+  Overview,
+  Movie,
+  Title,
+  DetailsMovie,
+  Image,
+} from "./styles";
 
 const Details = () => {
   const { id } = useParams();
@@ -15,7 +24,8 @@ const Details = () => {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        const { title, poster_path, overview, release_date, vote_average } = data;
+        const { title, poster_path, overview, release_date, vote_average } =
+          data;
         const movie = {
           id,
           title,
@@ -30,20 +40,20 @@ const Details = () => {
 
   return (
     <Container>
-      <div className="movie">
-        <img src={movie.image} alt={movie.sinopse} />
-        <div className="details">
-        <h2>Note: {movie.note}</h2>
-          <h1>{movie.title}</h1>
-          <span>Sinopse: {movie.sinopse}</span>
-          <span className="release-date">
-            Release date: {movie.releaseDate}
-          </span>
+      <Movie>
+        <Image src={movie.image} alt={movie.sinopse} />
+        <DetailsMovie>
+          <Title>Note: {movie.note}</Title>
+          <Title>{movie.title}</Title>
+          <Overview>
+            Sinopse: {movie.sinopse}
+            <span> Release date: {movie.releaseDate}</span>
+          </Overview>
           <Link to="/">
-            <button>Go Back</button>
+            <Button>Go Back</Button>
           </Link>
-        </div>
-      </div>
+        </DetailsMovie>
+      </Movie>
     </Container>
   );
 };
