@@ -1,46 +1,37 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.div`
-  .footer {
-    background-color: #222;
-    color: #fff;
-    padding: 3em;
-    text-align: center;
-  }
+  background-color: black;
+  color: #fff;
+  padding: 3em;
+  text-align: center;
+`;
+export const StyledSocialList = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 
-  .social_list {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-  }
-
-  .social_list {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-  }
-
-  .social_list li {
+  li {
     margin: 0 1em;
   }
 
-  .social_list li:hover {
+  li:hover {
     color: #ffbb33;
   }
 
-  .social_list svg {
+  svg {
     font-size: 1.5em;
     cursor: pointer;
   }
+`;
 
-  .copy_right {
-    margin-top: 2em;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-  }
+export const StyledCopyRight = styled.p`
+  margin-top: 2em;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 
-  .copy_right span {
+  span {
     font-weight: bold;
     color: #ffbb33;
   }

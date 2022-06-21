@@ -1,25 +1,25 @@
-import  {StyledFooter} from './styles'
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { StyledFooter, StyledSocialList, StyledCopyRight } from "./styles";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
-    return (
-        <StyledFooter className="footer">
-          <ul className="social_list">
-          <li>
-            <FaFacebook />
-          </li>
-          <li>
-            <FaInstagram />
-          </li>
-          <li>
-            <FaLinkedin />
-          </li>
-          </ul>
-          <p className="copy_right">
-            <span>Movies</span> &copy; 2022
-          </p>
-        </StyledFooter>
-      )
-}
+  return (
+    <StyledFooter>
+      <StyledSocialList>
+        <li>
+          <FaFacebook />
+        </li>
+        <li>
+          <FaInstagram />
+        </li>
+        <li>
+          <FaLinkedin />
+        </li>
+      </StyledSocialList>
+      <StyledCopyRight>
+        <span>Movies</span> &copy; 2022
+      </StyledCopyRight>
+    </StyledFooter>
+  );
+};
 
-export default Footer
+export default Footer;
