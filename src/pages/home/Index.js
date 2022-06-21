@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { Container, MovieList, Movie, Pagination, Button } from "./styles";
+import {
+  Container,
+  MovieList,
+  Movie,
+  Pagination,
+  Button,
+  Image,
+} from "./styles";
 import { APIKey } from "../../config/key";
 import Footer from "../footer/footer";
 
@@ -35,12 +42,12 @@ const Home = () => {
 
   return (
     <Container>
-      <h1>Movies</h1>
+      Movies
       <MovieList>
         {movies.map((movie) => (
           <Movie key={movie.id}>
             <Link to={`/details/${movie.id}`}>
-              <img
+              <Image
                 src={`${image_path}${movie.poster_path}`}
                 alt={movie.title}
               />

@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  h1 {
-    text-align: center;
-    margin: 4rem 0;
-  }
+  text-align: center;
+  margin: 4rem 0;
 `;
 
 export const Pagination = styled.div`
@@ -38,24 +36,18 @@ export const Movie = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.4s;
+  font-weight: bold;
+  font-size: 120%;
+  text-align: center;
 
-  img {
-    width: 180px;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  span {
-    font-weight: bold;
-    font-size: 120%;
-    text-align: center;
-  }
-
-  a {
-    transition: all 0.4s;
-  }
-
-  a:hover {
+  &:hover {
     transform: scale(1.3);
   }
+`;
+
+export const Image = styled.img`
+  width: 180px;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
 `;
